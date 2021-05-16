@@ -4,10 +4,9 @@ import java.util.Date;
 
 public class ContractCondition {
 	private Date duraction;
-	
-	
 	private int ID;
 	private int paymentAmount;
+	
 	public ContractCondition() {
 		// TODO Auto-generated constructor stub
 	}

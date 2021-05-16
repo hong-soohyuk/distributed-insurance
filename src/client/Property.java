@@ -1,4 +1,4 @@
-package customer;
+package client;
 
 public class Property {
 	private  long car;

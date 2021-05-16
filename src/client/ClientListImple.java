@@ -1,15 +1,15 @@
-package customer;
+package client;
 import java.util.ArrayList;
 
-public class CustomerListImple implements CustomerList{
-	private ArrayList<Customer> customerList;
+public class ClientListImple implements ClientList{
+	private ArrayList<Client> customerList;
 	
-	public CustomerListImple() {
-		this.customerList = new ArrayList<Customer>();
+	public ClientListImple() {
+		this.customerList = new ArrayList<Client>();
 	}
 	
 	@Override
-	public boolean add(Customer customer) 
+	public boolean add(Client customer) 
 	{
 		if(this.customerList.add(customer))
 			return true;
@@ -20,7 +20,7 @@ public class CustomerListImple implements CustomerList{
 	@Override
 	public boolean delete(String customerID)
 	{
-		Customer toDeleteCustomer = search(customerID);
+		Client toDeleteCustomer = search(customerID);
 		if (toDeleteCustomer != null) 
 			return this.customerList.remove(toDeleteCustomer);			
 		else 
@@ -30,20 +30,20 @@ public class CustomerListImple implements CustomerList{
 	@Override
 	public void update() {}
 
-	public Customer search(String customerID)
+	public Client search(String customerID)
 	{
-		for(Customer cust : this.customerList) {
+		for(Client cust : this.customerList) {
 			if(cust.getCustomerID().equals(customerID)) return cust;
 		}
 		return null;
 	}
 	
-	public void setcustomerList(ArrayList<Customer> customerList){
+	public void setcustomerList(ArrayList<Client> customerList){
 		this.customerList = customerList;
 	}
 
 	@Override
-	public ArrayList<Customer> getCustomers() {
+	public ArrayList<Client> getCustomers() {
 		return customerList;
 	}
 }

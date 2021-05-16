@@ -1,12 +1,14 @@
-package customer;
+package client;
 
 import commonValue.enums.Age;
 import commonValue.enums.job;
+import commonValue.enums.travelAreaGrade;
 
-public class Customer {
+public class Client {
 	
 	//Attributes
-	private String addidentHistory;
+	private int addidentHistory;
+	private int drivingExperience;
 	private Age age;
 	private String customerID;
 	private int familyIllHistory;
@@ -16,20 +18,22 @@ public class Customer {
 	private String phoneNo;
 	private String registrationNo;
 	private job job;
+	private travelAreaGrade areaGrade;
+
 	
 	//Composition Class
 	private Property property;
 	
 
-	public Customer() {
+	public Client() {
 		setProperty(new Property());
 	}
 	
 	
-	public String getAddidentHistory() {
+	public int getAddidentHistory() {
 		return addidentHistory;
 	}
-	public void setAddidentHistory(String addidentHistory) {
+	public void setAddidentHistory(int addidentHistory) {
 		this.addidentHistory = addidentHistory;
 	}
 	
@@ -92,6 +96,12 @@ public class Customer {
 	public Age getAge() {
 		return age;
 	}
+	public travelAreaGrade getAreaGrade() {
+		return areaGrade;
+	}
+	public void setAreaGrade(travelAreaGrade areaGrade) {
+		this.areaGrade = areaGrade;
+	}
 	public void setAge(int age) {
 		if(age < 20) this.age = Age.TENTH;
 		else if(age >= 20 && age < 30) this.age = Age.TWENTIETH;
@@ -99,6 +109,16 @@ public class Customer {
 		else if(age >= 40 && age < 50) this.age = Age.FOURTIETH;
 		else if(age >= 50 && age < 60) this.age = Age.FIFTIETH;
 		else if(age >= 60 && age < 70) this.age = Age.OVER_SEVENTIETH;
+	}
+
+
+	public int getDrivingExperience() {
+		return drivingExperience;
+	}
+
+
+	public void setDrivingExperience(int drivingExperience) {
+		this.drivingExperience = drivingExperience;
 	}
 	
 }
